@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Red Planet Today</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href=".\mars.css"> -->
+  <style>
+  h2{
+    text-align: center;
+  }
+  </style>
+</head>
+
+<body class="container-fluid">
+<div class="jumbotron">
+    <h1 class="display-4">Red Planet Today</h1>
+    <p class="lead">Your one-stop-shop for Martian news</p>
+    <hr class="my-4">
+    <!-- <p>{{mars_data['News']['Description']}}</p> -->
+    <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape and Refresh</a>
+  </div>
+
+  <div class='row'>
+      <div class='col-lg-4'>
+          <h3>Latest Martian News</h3>
+          <h6>{{mars_data['News']['Title']}}</h6>
+          <p>{{mars_data['News']['Description']}}</p>
+      </div>
+      <div class='col-lg-8'></div>
+      
+  </div>
+  <div class='row'>
+      <div class='col-lg-4'>
+        <h3>Featured Mars Pic</h3>  
+        <img style='max-width:100%; max-height:900px' id='featured-img' class='img-fluid' src="{{mars_data['Featured Image']}}" alt='Featured Image'>
+      </div>
+      <div class='col-lg-4'>
+          <div id='weather-card'>
+              <h3>Current Martian Weather</h3>
+              <p>{{mars_data['Weather']}}</p>
+          </div>
+          <div id='mars-facts'>
+              <h3>Mars Facts</h3>
+
+              <div>{{mars_data['Facts'] | safe}}</div>
+          </div>
+      </div>
+      <div class='col-lg-4'></div>
+  </div>
+  <h2>Martian Hemispheres</h2>
+  <div class='row'>
+      <div class='col-lg-6'>
+            <div class="card">
+                    <img class='img-responsive img-fluid' src="{{mars_data['Hemispheres'][0]['img_url']}}" class="card-img-top" alt="Hemisphere1pic">
+                    <div class="card-body">
+                      <h4 class="card-title">{{mars_data['Hemispheres'][0]['Title']}}</h4>
+                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+            </div>
+      </div>
+      <div class='col-lg-6'>
+            <div class="card">
+                    <img class='img-responsive img-fluid' src="{{mars_data['Hemispheres'][1]['img_url']}}" class="card-img-top" alt="Hemisphere2pic">
+                    <div class="card-body">
+                      <h4 class="card-title">{{mars_data['Hemispheres'][1]['Title']}}</h4>
+                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+            </div>
+      </div>
+  </div>
+  <div class='row'>
+        <div class='col-lg-6'>
+                <div class="card">
+                        <img class='img-responsive img-fluid' src="{{mars_data['Hemispheres'][2]['img_url']}}" class="card-img-top" alt="Hemisphere3pic">
+                        <div class="card-body">
+                          <h4 class="card-title">{{mars_data['Hemispheres'][2]['Title']}}</h4>
+                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                </div>
+        </div>
+        <div class='col-lg-6'>
+                <div class="card">
+                        <img class='img-responsive img-fluid' src="{{mars_data['Hemispheres'][3]['img_url']}}" class="card-img-top" alt="Hemisphere4pic">
+                        <div class="card-body">
+                          <h4 class="card-title">{{mars_data['Hemispheres'][3]['Title']}}</h4>
+                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+  </body>
